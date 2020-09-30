@@ -1,38 +1,61 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-size: calc(10px + 2vmin);
+  --border-radius: 0.5rem;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  padding: 2em;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: 0.25s;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  font-size: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-row {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.btn {
+  padding: 0.45em 0.75em;
+  border-radius: var(--border-radius);
+  border-style: solid;
+}
+
+.btn,
+.input {
+  opacity: 0.9;
+}
+
+.input {
+  padding: 0.25rem;
+  font: inherit;
+  border-radius: var(--border-radius);
+  border-style: solid;
+}
+
+.btn:hover,
+.btn:focus,
+.input:hover,
+.input:focus {
+  opacity: 1;
+}
+
+.btn:active {
+  opacity: 0.75;
+}
+
+.btn:disabled {
+  opacity: 0.5;
 }
