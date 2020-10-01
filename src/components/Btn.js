@@ -1,19 +1,27 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 
-const Btn = memo(({ label, onClick, disabled, children, style }) => {
-  useEffect(() => console.log('Btn render'));
-
-  return (
-    <button
-      className='btn'
-      onClick={onClick}
-      type='button'
-      disabled={disabled}
-      style={style}
-    >
-      {label || children}
-    </button>
-  );
-});
+const Btn = memo(
+  ({
+    className,
+    label,
+    onClick,
+    disabled,
+    children,
+    style,
+    type = 'button',
+  }) => {
+    return (
+      <button
+        className={className + ' btn'}
+        onClick={onClick}
+        type={type}
+        disabled={disabled}
+        style={style}
+      >
+        {label || children}
+      </button>
+    );
+  },
+);
 
 export default Btn;

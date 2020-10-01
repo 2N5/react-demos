@@ -1,0 +1,21 @@
+.form {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: [labels] max-content [controls] 1fr;
+}
+
+.form > * {
+  margin: 0;
+}
+
+.form--label {
+  grid-column: labels;
+}
+
+.form--control {
+  grid-column: controls;
+}
+
+.form--submit {
+  grid-column: span 2;
+}
